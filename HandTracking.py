@@ -32,12 +32,13 @@ while True:
                 #print(id,lm)
                 h,w,c = img.shape # height, width, channel
                 cx, cy = int(lm.x * w), int(lm.y * h) 
-                print(id,cx,cy) # printing id along with the centres
+                
                 
                 # Color one specific landmark
                 # For example 8 is the id for tip of index finger
                 if id==8:
-                   cv2.circle(img, (cx,cy), 20, (255,0,0),cv2.FILLED) 
+                   cv2.circle(img, (cx,cy), 15, (255,0,0),cv2.FILLED) 
+                   print(id,cx,cy) # printing id along with the centres
 
             # Plotting the points of landmarks and joining then with connections    
             mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
